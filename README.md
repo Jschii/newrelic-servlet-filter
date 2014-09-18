@@ -16,7 +16,7 @@
 
             <filter>
                 <filter-name>newrelic</filter-name>
-                <filter-class>yle.newrelic.NewRelicTracingFilter</filter-class>
+                <filter-class>yleisradio.newrelic.NewRelicTracingFilter</filter-class>
             </filter>
             <filter-mapping>
                 <filter-name>newrelic</filter-name>
