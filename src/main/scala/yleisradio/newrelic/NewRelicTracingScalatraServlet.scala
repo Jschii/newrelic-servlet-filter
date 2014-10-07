@@ -9,7 +9,10 @@ trait NewRelicTracingScalatraServlet { servlet: ScalatraServlet =>
   private lazy val servletRootPath = Try { getServletRootPath }.toOption.getOrElse("")
 
   servlet.error {
-    case e: Throwable => Try { NewRelic.noticeError(e) }
+    case e: Throwable => {
+        NewRelic.noticeError(e)
+        throw e
+    }
   }
 
   def get(route: String)(action: => Any): Route =
